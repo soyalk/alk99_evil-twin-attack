@@ -1,6 +1,16 @@
 ﻿   -Evil twin attack on android (alk99)*root requered
 this script is just for educational purposes only DO NOT BE EVIL
  
+        _ _     ___   ___  
+   __ _| | | __/ _ \ / _ \ 
+ / _` | | |/ / (_) | (_) |
+| (_| | |   < \__, |\__, |
+ \__,_|_|_|\_\  /_/   /_/ 
+                          
+
+
+
+
 #Requerement:
 - csploit
 
