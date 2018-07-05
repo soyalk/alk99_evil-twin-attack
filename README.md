@@ -19,7 +19,7 @@ this attack is similar to fluxion and linset but in an other plateforme
  - android webserver (php server )
 
 
-# how to install install
+# how to install 
 
 
 - open csploit garnt superuser permition  install new core and wait until it finished extracting close the app 
