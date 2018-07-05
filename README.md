@@ -6,7 +6,7 @@ this attack is similar to fluxion and linset but in an other plateforme
 # alk99
 
 
-# Requerement:
+# Requerements:
 - csploit
 
 - iptables binary
@@ -23,12 +23,11 @@ this attack is similar to fluxion and linset but in an other plateforme
 en termux and wait until it done installing 
 type on termux :
      ```
-       - pkg install tsu
-       - pkg install git
-       - exit
-       - exit
-       ```
-
+        pkg install tsu
+        pkg install git
+        exit
+        exit
+     ```
 - open server for php ( or any other android webserver support php)
  install the newest package
   copy the default page (files index...) or the page you prefer from “fake pages “ go to you internelal storage WWW and public past it here and go to server for php start hotspot tether of your mobile and in server for php choose wlan0  192.168.43.1 click on start server 
@@ -38,21 +37,21 @@ now all working
 clone the folder
 - open termux  type :  
 ```
-- git clone https://github.com/soyalk/clone-download-alk-evil-twin.git
-- cd clone-download-alk-evil-twin
-- tsu
-- bash install.sh
+   git clone https://github.com/soyalk/clone-download-alk-evil-twin.git
+   cd clone-download-alk-evil-twin
+   tsu
+   bash install.sh
 ```
 
 wait until it finish instaling
 now type:
 ```
--exit
--exit
+  exit
+  exit
 ```
 and open termux and type:   #(now the server must be started and the client must be connected)
 ```
-- tsu
-- alk99 
+  tsu
+  alk99 
 ```   
 
