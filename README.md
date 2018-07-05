@@ -1,5 +1,8 @@
 ﻿   - Evil twin attack on android (alk99)*root requered
- ###### this script is for educational purposes only DO NOT BE EVIL
+@abderrahaman @walid @soufian
+
+
+###### this script is for educational purposes only DO NOT BE EVIL
 this attack is similar to fluxion and linset but in an other plateforme
 
 
@@ -54,4 +57,7 @@ and open termux and type:   #(now the server must be started and the client must
   tsu
   alk99 
 ```   
+
+
+
 
