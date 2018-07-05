@@ -1,4 +1,4 @@
-﻿   -Evil twin attack on android (alk99)*root requered
+﻿   - Evil twin attack on android (alk99)*root requered
 this script is just for educational purposes only DO NOT BE EVIL
  
 
@@ -13,7 +13,7 @@ this script is just for educational purposes only DO NOT BE EVIL
 
 - termux
 
--android webserver (php server )
+ - android webserver (php server )
 
 
 # how to install install
@@ -52,5 +52,6 @@ now type:
 and open termux and type:   #(now the server must be started and the client must be connected)
 ```
 - tsu
-- alk99 ```   
+- alk99 
+```   
 
