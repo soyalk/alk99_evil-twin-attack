@@ -1,9 +1,9 @@
 ﻿   - Evil twin attack on android (alk99)*root requered
-this script is just for educational purposes only DO NOT BE EVIL
- 
+ ###### this script is for educational purposes only DO NOT BE EVIL
+this attack is similar to fluxion and linset but in an other plateforme
 
 
-
+# alk99
 
 
 # Requerement:
