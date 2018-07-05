@@ -19,23 +19,24 @@ this attack is similar to fluxion and linset but in an other plateforme
 # how to install install
 
 
--$ open csploit garnt superuser permition  install new core and wait until it finished extracting close the app 
+- open csploit garnt superuser permition  install new core and wait until it finished extracting close the app 
 en termux and wait until it done installing 
 type on termux :
-       ```
+     ```
        - pkg install tsu
        - pkg install git
        - exit
        - exit
        ```
--$ open server for php ( or any other android webserver support php)
+
+- open server for php ( or any other android webserver support php)
  install the newest package
   copy the default page (files index...) or the page you prefer from “fake pages “ go to you internelal storage WWW and public past it here and go to server for php start hotspot tether of your mobile and in server for php choose wlan0  192.168.43.1 click on start server 
 go to your browser and type http://192.168.4.1:8080
 now all working
 
 clone the folder
-$ open termux  type $:  
+- open termux  type :  
 ```
 - git clone https://github.com/soyalk/clone-download-alk-evil-twin.git
 - cd clone-download-alk-evil-twin
