@@ -14,7 +14,7 @@ this script is just for educational purposes only DO NOT BE EVIL
 #how to install install
 
 
--open csploit garnt superuser permition  install new core and wait until it finished extracting close the app 
+-open csploit grant superuser permition  install new core and wait until it finished extracting close the app 
 -open termux and wait until it done installing 
 type on termux :
        #- pkg install tsu
