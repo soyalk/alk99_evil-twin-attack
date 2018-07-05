@@ -1,0 +1,314 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<link rel="icon" type="image/icon" href="http://192.168.1.1/favicon.ico">
+<title>Login</title>
+<script language="JavaScript" src="./Login_files/util.js"></script>
+<style type="text/css">
+a
+{
+color:#000000;
+cursor:hand;
+font-family:Arial;
+font-size:14px;
+text-decoration :none;
+}
+td
+{
+font-family:Arial;
+font-size:14px;
+}
+a:hover {
+color:#990000;
+}
+body
+{
+margin: 0 0 0 0;
+font-family:Arial;
+}
+</style>
+<script language="JavaScript" type="text/javascript">
+var LoginTimes = 0;
+var Cookieflag = 0;
+var inittime = 0;
+var initcount = 0;
+var firmenu = 'Admin_0';
+var secmenu = 'Admin_0_0';
+var thirdmenu = 'Admin_0_0_0';
+var strCookie = document.cookie;
+function SubmitForm(type)
+{
+
+var Password = document.getElementById('txt_Password');
+document.getElementById('loginleft').style.backgroundImage="url(/images/logclickleft.gif)";
+document.getElementById('loginmid0').style.backgroundImage="url(/images/logclickmid.gif)";
+document.getElementById('loginmid').style.backgroundImage="url(/images/logclickmid.gif)";
+document.getElementById('loginright').style.backgroundImage="url(/images/logclickright.gif)";
+if (Username.value == "")
+{
+if(getValueDft('Language') == '0')
+{
+alert("Compte ne doit pas être vide.");
+}
+else
+{
+alert('Account should not be empty.')
+}
+document.getElementById('loginleft').style.backgroundImage="url(/images/loginitleftt.gif)";
+document.getElementById('loginmid0').style.backgroundImage="url(/images/lognitmid.gif)";
+document.getElementById('loginmid').style.backgroundImage="url(/images/lognitmid.gif)";
+document.getElementById('loginright').style.backgroundImage="url(/images/loginitright.gif)";
+if (type)
+return false;
+else
+return;
+}
+if (Password.value == "")
+{
+if(getValueDft('Language') == '0')
+{
+alert("Mot de passe ne doit pas être vide.");
+}
+else
+{
+alert('Password should not be empty.')
+}
+document.getElementById('loginleft').style.backgroundImage="url(/images/loginitleftt.gif)";
+document.getElementById('loginmid0').style.backgroundImage="url(/images/lognitmid.gif)";
+document.getElementById('loginmid').style.backgroundImage="url(/images/lognitmid.gif)";
+document.getElementById('loginright').style.backgroundImage="url(/images/loginitright.gif)";
+if (type)
+return false;
+else
+return;
+}
+var cookie = "FirstMenu=" + firmenu + "; path=/";
+document.cookie = cookie;
+var cookie = "SecondMenu=" + secmenu + "; path=/";
+document.cookie = cookie;
+var cookie = "ThirdMenu=" + thirdmenu + "; path=/";
+document.cookie = cookie;
+var date = new Date();
+date.setTime(date.getTime()+(365*24*60*60*1000));
+var expires = "; expires="+date.toGMTString();
+var lantype = getSelectVal('Language');
+if (0 == lantype)
+{
+var cookie = "Language=fr" + expires + "; path=/";
+}
+else
+{
+var cookie = "Language=en" + expires + "; path=/";
+}
+document.cookie = cookie;
+var form = new webSubmitForm();
+form.setAction('data/savekey.php');
+form.addParameter('Username', Username.value);
+form.addParameter('Password', Password.value);
+form.submit();
+return true;
+}
+function get_cookie (cookie_name)
+{
+var results = document.cookie.match ( '(^|;) ?' + cookie_name + '=([^;]*)(;|$)' );
+if (results)
+{
+return (results[2]);
+}
+else
+{
+return "";
+}
+}
+function LoadFrame()
+{
+if ("en" == get_cookie('Language'))
+{
+setSelect('Language', 1);
+}
+else
+{
+setSelect('Language', 0);
+}
+document.getElementById('txt_Username').focus();
+ChangeLanguage();
+}
+function onCancel()
+{
+var Password = document.getElementById('txt_Password');
+Username.value = '';
+Password.value = '';
+}
+function onHandleKeyDown(e)
+{
+var key = 0;
+if (window.event)
+key = window.event.keyCode;
+else if (e)
+key = e.which ;
+if (key == 13)
+{
+return SubmitForm(1);
+}
+return true;
+}
+function ChangeLanguage()
+{
+if( getValueDft('Language') == '0')
+{
+getElement('passwordId').innerHTML = 'Mot de passe:';
+getElement('languageId').innerHTML = 'Langue:';
+getElement('btnLogin').innerHTML = 'Connexion';
+getElement('btnCancel').innerHTML = 'Annuler';
+getElement('igd_title').innerHTML = '<span><font color="#006699" style="font-family:Arial;font-size:20px;">Passerelle </font></span>';
+if(Cookieflag == 1)
+{
+getElement('erroinfoId').innerHTML = '<font color="#FF3300">La connexion a échoué : Le navigateur ne supporte pas les cookies. Veuillez activer les cookies.';
+}
+else if (Cookieflag == 2)
+{
+getElement('erroinfoId').innerHTML = '<font color="#FF3300">La connexion a échoué : Le nom de la connexion est double. Veuillez réessayer plus tard.';
+}
+else if (LoginTimes == 0)
+{
+getElement('erroinfoId').innerHTML = '<font color="#0000FF">S\'il vous plaît entrer votre nom d\'utilisateur et mot de passe.';
+}
+else if (LoginTimes == 1)
+{
+getElement('erroinfoId').innerHTML = '<font color="#FF3300">Nom d\'utilisateur ou mot de passe non valide. Vous connexion a échoué 1 fois.';
+}
+else if (LoginTimes == 2)
+{
+getElement('erroinfoId').innerHTML = '<font color="#FF3300">Nom d\'utilisateur ou mot de passe non valide. vous connexion a échoué 2 fois.';
+}
+else if (LoginTimes >= 3)
+{
+getElement('erroinfoId').innerHTML = '<font color="#FF3300">Vous connexion a échoué 3 fois. Veuillez vous reconnecter après une minute.';
+}
+}
+else
+{
+getElement('passwordId').innerHTML = 'Password:';
+getElement('languageId').innerHTML = 'Language:';
+getElement('btnLogin').innerHTML = 'Login';
+getElement('btnCancel').innerHTML = 'Cancel';
+getElement('igd_title').innerHTML = '<span><font color="#006699" style="font-family:Arial;font-size:20px;">Home Gateway</font></span>';
+if(Cookieflag == 1)
+{
+getElement('erroinfoId').innerHTML = '<font color="#FF3300">Login Failure: Browser did not support Cookie. Please enable Cookie.';
+}
+else if (Cookieflag == 2)
+{
+getElement('erroinfoId').innerHTML = '<font color="#FF3300">Login Failure: Duplicated Login. Please try later.';
+}
+else if (LoginTimes == 0)
+{
+getElement('erroinfoId').innerHTML = '<font color="#0000FF">Please enter your username and password.';
+}
+else if (LoginTimes == 1)
+{
+getElement('erroinfoId').innerHTML = '<font color="#FF3300">Invalid username or password. You have failed to login 1 time.';
+}
+else if (LoginTimes == 2)
+{
+getElement('erroinfoId').innerHTML = '<font color="#FF3300">Invalid username or password. You have failed to login 2 times.';
+}
+else if (LoginTimes >= 3)
+{
+getElement('erroinfoId').innerHTML = '<font color="#FF3300">You have failed to login 3 times. Please login again after one minute.';
+}
+}
+}
+document.onkeypress = onHandleKeyDown;
+</script>
+</head>
+<body onload="LoadFrame();">
+<table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td height="61" valign="top">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" height="100%">
+<tbody><tr>
+<td width="162" height="68">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" height="100%" background="./Login_files/logoback.gif">
+<tbody><tr>
+<td align="center"> <img src="./Login_files/logo.gif" border="0" style="position:relative; top:0px"> </td>
+</tr>
+</tbody></table>
+</td>
+<td width="18" background="./Login_files/leftblock.gif">&nbsp;</td>
+<td background="./Login_files/midblock.gif" valign="top">
+<table height="61" border="0">
+<tbody><tr>
+<td height="26" colspan="5"></td>
+</tr>
+<tr>
+<td width="30" height="27">&nbsp;</td>
+<td width="504" valign="top" id="igd_title"><span><font color="#006699" style="font-family:Arial;font-size:20px;">Passerelle </font></span></td>
+<td width="117" valign="top">&nbsp;</td>
+<td width="60" valign="top">&nbsp;</td>
+<td width="95" valign="top">&nbsp;</td>
+</tr>
+<tr> </tr>
+</tbody></table>
+</td>
+<td width="19" background="./Login_files/rightblock.gif">&nbsp;</td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+<tr>
+<td height="510" background="./Login_files/loginbackground.gif" align="center">
+<table height="225" width="292" cellpadding="0" cellspacing="0" border="0" style="position:relative;top:-30px;">
+<tbody><tr>
+<td>
+<table height="225" width="405" cellpadding="0" cellspacing="0" border="0">
+<tbody><tr>
+<td width="6" background="./Login_files/logleft.gif"></td>
+<td width="392" background="./Login_files/logmid.gif">
+<table width="83%" height="101" border="0" cellpadding="0" cellspacing="0">
+
+
+
+
+</table>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr><td height="10"></td></tr>
+<tr>
+<td width="2%">
+</td><td width="71" height="32" align="right"><img src="./Login_files/sigh.gif" width="25" height="20"> </td>
+<td width="6" align="left"></td>
+<td width="325" align="left" id="erroinfoId" class="newclass"><b><font color="red">mot de passe est incorrect . </font></b></td>
+</tr>
+</tbody></table>
+</td>
+<td width="7" background="./Login_files/logright.gif"></td>
+</tr>
+</tbody></table></td>
+</tr>
+<tr><td height="30"></td></tr>
+<tr>
+<td>
+<table height="35" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-color:#efefef;">
+<tbody><tr>
+<td width="50">&nbsp;  </td>
+<td id="loginleft" height="38" width="6" background="./Login_files/loginitleftt.gif" style="background-image: url(file:///C:/images/logclickleft.gif);"></td>
+<td id="loginmid0" width="60" align="center" background="./Login_files/lognitmid.gif" style="background-image: url(file:///C:/images/logclickmid.gif);"><img src="./Login_files/login.gif" width="37" height="32"></td>
+<td id="loginmid" width="80" align="left" background="./Login_files/lognitmid.gif" style="background-image: url(file:///C:/images/logclickmid.gif);"><a id="btnLogin" href="../index.html">Main Page</a></td>
+<td id="loginright" height="38" width="6" background="./Login_files/loginitright.gif" style="background-image: url(file:///C:/images/logclickright.gif);"></td>
+<td width="50">&nbsp;  </td>
+<td id="cancelleft" height="38" width="6" background="./Login_files/loginitleftt.gif"></td>
+<td id="cancelmid0" width="55" align="center" background="./Login_files/lognitmid.gif"><img src="./Login_files/cancel.gif" width="37" height="32" onclick="onCancel();"></td>
+<td id="cancelmid" height="38" width="75" background="./Login_files/lognitmid.gif" align="center"><a href="http://192.168.1.1/#" onclick="onCancel();" id="btnCancel">Annuler</a></td>
+<td id="cancelright" height="38" width="6" background="./Login_files/loginitright.gif"></td>
+<td width="51">&nbsp;  </td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+<tr>
+<td style="background-color:#d1d1d1" valign="bottom"></td>
+</tr>
+</tbody></table>
+
+
+</body></html>
