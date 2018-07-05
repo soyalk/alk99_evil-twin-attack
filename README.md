@@ -34,7 +34,7 @@ type on termux :
 - open server for php ( or any other android webserver support php)
  install the newest package
   copy the default page (files index...) or the page you prefer from “fake pages “ go to you internelal storage WWW and public past it here and go to server for php start hotspot tether of your mobile and in server for php choose wlan0  192.168.43.1 click on start server 
-go to your browser and type http://192.168.4.1:8080
+go to your browser and type http://192.168.43.1:8080
 now all working
 
 clone the folder
