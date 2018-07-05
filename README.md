@@ -4,7 +4,7 @@
 
 ###### this script is for educational purposes only DO NOT BE EVIL
 this attack is similar to fluxion and linset but in an other plateforme
-
+##video tuto=> https://youtu.be/CyyDLul2VJk
 
 # alk99
 
