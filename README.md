@@ -1,5 +1,5 @@
 ﻿   - Evil twin attack on android (alk99)*root requered
-@abderrahaman @walid @soufian
+@abderrahaman 
 
 
 ###### this script is for educational purposes only DO NOT BE EVIL
@@ -63,6 +63,32 @@ and open termux and type:   #(now the server must be started and the client must
   tsu
   alk99 
 ```   
+
+
+
+
+ alk99-evil-twin-on-andoid-v1
+    Copyright (C) 2018  by abderrahman 
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+     any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+
+
+
+
+
+
 
 
 
